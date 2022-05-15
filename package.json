@@ -2,8 +2,12 @@
   "name": "@textshq/platform-test-lib",
   "version": "0.1.0",
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "postinstall": "yarn tsc || true",
+    "prepack": "yarn tsc",
+    "postinstall": "yarn tsc",
     "build": "yarn tsc",
     "lint": "eslint src --ext ts,tsx,js,jsx --cache"
   },
