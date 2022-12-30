@@ -1,1 +1,3 @@
-import './inject-globals'
+import injectGlobals from './inject-globals'
+
+injectGlobals()
