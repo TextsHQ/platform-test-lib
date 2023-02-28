@@ -7,6 +7,7 @@ class Client {
       url,
       ...opts,
       responseType: 'text',
+      throwHttpErrors: false,
     })
     return {
       statusCode: response.statusCode,
@@ -20,6 +21,7 @@ class Client {
       url,
       ...opts,
       responseType: 'buffer',
+      throwHttpErrors: false,
     })
     return {
       statusCode: response.statusCode,
