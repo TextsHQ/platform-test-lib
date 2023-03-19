@@ -12,7 +12,7 @@
     "lint": "eslint src --ext ts,tsx,js,jsx --cache"
   },
   "dependencies": {
-    "@textshq/platform-sdk": "https://github.com/TextsHQ/platform-sdk#eb53db0301aeb593cdf8407ddaf2ba998f0c01e2",
+    "@textshq/platform-sdk": "https://github.com/TextsHQ/platform-sdk#b5168dae5f43c525bde522b9f80a54b132bc2de9",
     "got": "^11.8.2"
   },
   "devDependencies": {
