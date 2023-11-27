@@ -1,5 +1,6 @@
 import { USER_AGENT } from './constants'
-import { createHttpClient } from './create-http-client'
+import { createHttpClient } from './got-fetch'
+import { fetch, fetchStream } from './fetch'
 
 const IS_DEV = true
 
@@ -21,11 +22,14 @@ export default function injectGlobals() {
       // APP_VERSION: pkg.version,
       // BUILD_DIR_PATH,
     },
-    Sentry: {},
-    // trackPlatformEvent,
+    Sentry: {
+      captureException: () => {},
+      captureMessage: () => {},
+    },
+    trackPlatformEvent: () => {},
     // runWorker: runOtherWorker,
-    // fetch,
-    // fetchStream,
+    fetch,
+    fetchStream,
     createHttpClient,
   }
 }

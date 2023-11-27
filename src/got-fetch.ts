@@ -2,12 +2,13 @@ import got from 'got'
 import type { FetchResponse, FetchOptions } from '@textshq/platform-sdk'
 
 class Client {
+  // eslint-disable-next-line class-methods-use-this
   async requestAsString(url: string, opts?: FetchOptions): Promise<FetchResponse<string>> {
     const response = await got({
+      throwHttpErrors: false,
       url,
       ...opts,
       responseType: 'text',
-      throwHttpErrors: false,
     })
     return {
       statusCode: response.statusCode,
@@ -16,12 +17,13 @@ class Client {
     }
   }
 
+  // eslint-disable-next-line class-methods-use-this
   async requestAsBuffer(url: string, opts?: FetchOptions): Promise<FetchResponse<Buffer>> {
     const response = await got({
+      throwHttpErrors: false,
       url,
       ...opts,
       responseType: 'buffer',
-      throwHttpErrors: false,
     })
     return {
       statusCode: response.statusCode,
