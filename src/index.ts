@@ -1,3 +1,3 @@
 import injectGlobals from './inject-globals'
 
-injectGlobals()
+export default injectGlobals
