@@ -1,3 +1,4 @@
+import path from 'path'
 import { USER_AGENT } from './constants'
 import { createHttpClient } from './got-fetch'
 import { fetch, fetchStream } from './fetch'
@@ -20,13 +21,16 @@ export default function injectGlobals() {
     constants: {
       USER_AGENT,
       // APP_VERSION: pkg.version,
-      // BUILD_DIR_PATH,
     },
     Sentry: {
       captureException: () => {},
       captureMessage: () => {},
+      startTransaction: () => {},
     },
     trackPlatformEvent: () => {},
+    getBinariesDirPath(platformName: string) {
+      return path.join(__dirname, '../..', 'platform-' + platformName, 'binaries')
+    },
     // runWorker: runOtherWorker,
     fetch,
     fetchStream,
