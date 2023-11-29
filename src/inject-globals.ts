@@ -6,10 +6,7 @@ import { createHttpClient } from './got-fetch'
 import { fetch, fetchStream } from './fetch'
 // import { runOtherWorker } from './workers'
 
-const IS_DEV = true
-const isLoggingEnabled = true
-
-export default function injectGlobals(userDataDirPath: string) {
+export default function injectGlobals(IS_DEV: boolean, isLoggingEnabled: boolean, userDataDirPath: string) {
   // globalThis.AsyncSqlite = AsyncSqlite
 
   globalThis.texts = {
