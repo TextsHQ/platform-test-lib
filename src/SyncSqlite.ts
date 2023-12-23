@@ -1,12 +1,12 @@
 import betterSqlite from 'better-sqlite3'
-// import type { IAsyncSqlite } from '@textshq/platform-sdk'
+import type { IAsyncSqlite } from '@textshq/platform-sdk'
 
-export default class SyncSqlite { // implements IAsyncSqlite
+export default class SyncSqlite implements Omit<IAsyncSqlite, 'new'> {
   private db: betterSqlite.Database
 
   private statementMap = new Map<string, betterSqlite.Statement>()
 
-  prepareSQL(sql: string) {
+  prepareSQL(sql: string): betterSqlite.Statement {
     const cached = this.statementMap.get(sql)
     if (cached) return cached
     const prepared = this.db.prepare(sql)
