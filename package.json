@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@textshq/platform-sdk": "https://github.com/TextsHQ/platform-sdk#main",
+    "better-sqlite3": "npm:@signalapp/better-sqlite3@8.6.0",
     "got": "^11.8.2"
   },
   "devDependencies": {

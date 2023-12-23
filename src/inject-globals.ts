@@ -4,10 +4,11 @@ import { TextsNodeGlobals } from '@textshq/platform-sdk/dist/TextsGlobals'
 import { USER_AGENT } from './constants'
 import { createHttpClient } from './got-fetch'
 import { fetch, fetchStream } from './fetch'
+import SyncSqlite from './SyncSqlite'
 // import { runOtherWorker } from './workers'
 
 export default function injectGlobals(IS_DEV: boolean, isLoggingEnabled: boolean, userDataDirPath: string) {
-  // globalThis.AsyncSqlite = AsyncSqlite
+  globalThis.AsyncSqlite = SyncSqlite
 
   globalThis.texts = {
     IS_DEV,
